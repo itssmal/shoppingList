@@ -3,6 +3,7 @@ var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 var deleteBtns = document.getElementsByClassName("delete");
 var listItem = document.querySelectorAll("li");
+var footer = document.getElementsByTagName("footer")[0];
 
 //every second li dark
 // for (var b = 0; b < listItem.length; b++) {
@@ -10,6 +11,10 @@ var listItem = document.querySelectorAll("li");
 // 		listItem[b].className += "darkItem";
 // 	}
 // }
+if (listItem.length < 6) {
+	console.log("hello");
+	footer.className += "lock";
+}
 
 //add event listener for buttons
 for (var i = 0; i < deleteBtns.length; i++){

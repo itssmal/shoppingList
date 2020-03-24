@@ -50,10 +50,6 @@ button:focus {
   border: 3px solid #555;
 }
 footer{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   text-align: center;
   color: rgb(61, 61, 61);
   padding: 2px;
@@ -63,6 +59,12 @@ footer a{
   text-align: center;
   text-decoration: none;
   color: rgb(61, 61, 61);
+}
+.lock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .done {
   text-decoration: line-through;
