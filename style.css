@@ -1,10 +1,10 @@
 html {
   background-color: black ;
   color: white;
+  font-family: 'Oswald', Helvetica, sans-serif;
 }
 .coolTitle {
   text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
   font-size: 80px;
   letter-spacing: 4px;
   word-spacing: -8px;
@@ -14,9 +14,11 @@ html {
   text-align: center;
   margin: 0 auto;
 }
+ul {
+  list-style: none;
+}
 #first {
   text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
   font-size: 40px;
   font-weight: bold;
   letter-spacing: 4px;
@@ -28,7 +30,6 @@ html {
   border-radius: 3px;
   border: none;
   height: 20px;
-  font-family: 'Oswald', Helvetica, sans-serif;
   color: white;
   background-color: rgb(61, 61, 61);
 }
@@ -47,6 +48,21 @@ button {
 button:focus {
   outline: none;
   border: 3px solid #555;
+}
+footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: rgb(61, 61, 61);
+  padding: 2px;
+  margin-bottom: 0px;
+}
+footer a{
+  text-align: center;
+  text-decoration: none;
+  color: rgb(61, 61, 61);
 }
 .done {
   text-decoration: line-through;

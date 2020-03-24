@@ -5,11 +5,11 @@ var deleteBtns = document.getElementsByClassName("delete");
 var listItem = document.querySelectorAll("li");
 
 //every second li dark
-for (var b = 0; b < listItem.length; b++) {
-	if (b % 2 != 0 ) {
-		listItem[b].className += "darkItem";
-	}
-}
+// for (var b = 0; b < listItem.length; b++) {
+// 	if (b % 2 != 0 ) {
+// 		listItem[b].className += "darkItem";
+// 	}
+// }
 
 //add event listener for buttons
 for (var i = 0; i < deleteBtns.length; i++){
