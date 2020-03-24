@@ -1,0 +1,56 @@
+html {
+  background-color: black ;
+  color: white;
+}
+.coolTitle {
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 80px;
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: white;
+}
+.createLi {
+  text-align: center;
+  margin: 0 auto;
+}
+#first {
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: rgb(61, 61, 61);
+
+}
+#userinput {
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+  height: 20px;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  color: white;
+  background-color: rgb(61, 61, 61);
+}
+#userinput:focus {
+  outline: none;
+  border: 3px solid #555;
+}
+button {
+  margin: 10px;
+  height: 20px;
+  border-radius: 3px;
+  border: transparent;
+  color: white;
+  background-color: rgb(61, 61, 61);
+}
+button:focus {
+  outline: none;
+  border: 3px solid #555;
+}
+.done {
+  text-decoration: line-through;
+}
+.darkItem {
+  color: rgb(82, 82, 82) ;
+}
