@@ -1,72 +1,59 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("userinput");
-var ul = document.querySelector("ul");
-var deleteBtns = document.getElementsByClassName("delete");
-var listItem = document.querySelectorAll("li");
-var footer = document.getElementsByTagName("footer")[0];
+const list = document.querySelector('#list');
+const input = document.querySelector('#input');
 
-//every second li dark
-// for (var b = 0; b < listItem.length; b++) {
-// 	if (b % 2 != 0 ) {
-// 		listItem[b].className += "darkItem";
-// 	}
-// }
-if (listItem.length < 6) {
-	console.log("hello");
-	footer.className += "lock";
+let array = []
+
+const addListItem = () => {
+    let item = {
+        text: '',
+        done: false
+    }
+    if (input.value.length > 0) {
+        item.text = input.value
+        input.value = ''
+        array.unshift(item)
+        updateList()
+    }
 }
 
-//add event listener for buttons
-for (var i = 0; i < deleteBtns.length; i++){
-	deleteBtns[i].addEventListener("click",removeParent,false);
+const updateList = () => {
+    list.innerHTML = null
+    array.map(item => {
+        const delBtn = document.createElement('button')
+        delBtn.addEventListener('click', (event) => {
+            return removeItem(event.target.parentElement.firstChild)
+        })
+        delBtn.innerHTML = 'delete'
+
+        const span = document.createElement('span')
+        span.appendChild(document.createTextNode(item.text));
+
+        const div = document.createElement('div')
+        div.classList.add('item')
+        item.done ? div.classList.toggle('done') : null
+        div.addEventListener('click', (event) => {
+            return toggleItemState(event.target.firstChild)
+        })
+        div.appendChild(span)
+        div.appendChild(delBtn)
+
+        list.appendChild(div);
+    })
 }
 
-function removeParent(evt) {
-	evt.target.removeEventListener("click",removeParent,false);
-	evt.target.parentNode.remove();
+const removeItem = (target) => {
+    array = array.filter(el => el.text != target.innerText)
+    updateList()
 }
 
-//changing li style on click
-function getEventTarget(e) {
-	e = e || window.event;
-	return e.target || e.srcElement;
+const toggleItemState = (target) => {
+    array.map(el => {
+        if (el.text == target.innerHTML) {
+            el.done = !el.done
+        }
+    })
+    array.sort((a, b) => {
+        return a.done - b.done
+    })
+    updateList()
 }
-
-ul.onclick = function(event) {
-	var target = getEventTarget(event);
-	target.classList.toggle("done");
-}
-
-function inputLength() {
-	return input.value.length;
-}
-
-function createListElement() {
-	var btn = document.createElement("button");
-	btn.innerHTML = "Delete!";
-	btn.onclick = removeParent;
-
-	var li = document.createElement("li");
-	li.appendChild(document.createTextNode(input.value));
-	li.innerHTML = li.innerHTML + " ";
-	li.appendChild(btn);
-	ul.appendChild(li);
-	input.value = "";
-}
-
-function addListAfterClick() {
-	if (inputLength() > 0) {
-		createListElement();
-	}
-}
-
-function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
-	}
-}
-
-button.addEventListener("click", addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
-

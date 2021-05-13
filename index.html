@@ -7,26 +7,15 @@
 </head>
 <body>
 	<hr>
-	<h1 class="coolTitle">Shopping List</h1>
+	<h1 class="title">Shopping List</h1>
 	<hr>
-	<p id="first">Get It Done Today!</p>
-	<div class="createLi">
-		<input id="userinput" type="text" placeholder="type here...">
-		<button id="enter">enter</button>
-		<ul>
-			<li>Notebook <button class="delete">delete</button></li> 
-			<li>Jello <button class="delete">delete</button></li> 
-			<li>Spinach <button class="delete">delete</button></li> 
-			<li>Rice <button class="delete">delete</button></li> 
-			<li>Birthday Cake <button class="delete">delete</button></li> 
-			<li>Candles <button class="delete">delete</button></li> 
-		</ul>	
+	<p class="subtitle">Get It Done Today!</p>
+	<div class="wrapper">
+		<input id="input" type="text" placeholder="type here...">
+		<button onclick="addListItem()">add</button>
+		<div id="list"></div>
 	</div>
-<!-- <footer>
-	<h5>
-		<a href="https://www.instagram.com/its_ssmal/" class="footer"> Olexandr Smal</a> &copy; 2020</p>
-	</h5>
-</footer> -->
+
 	<script type="text/javascript" src="script.js"></script>
 </body>
 
